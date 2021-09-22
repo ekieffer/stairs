@@ -100,7 +100,8 @@ if __name__ == "__main__":
         if os.environ.get('IPY_PROFILE',None) is not None:
             rc=ipp.Client(profile=os.environ['IPY_PROFILE'])
         else:
-            rc=ipp.Client()
+            pass
+    rc=ipp.Client()
     pop,log,hof = main(rc,**kwargs)
     recorder(kwargs["heuristics"], hof)
     data=dict(pop=pop,hof=hof,log=log)

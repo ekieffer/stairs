@@ -6,7 +6,6 @@ from stairs.heuristics import *
 from stairs.heuristicLearners import *
 from stairs.exceptions import CashShortage,CashFlows_Freq
 from stairs.utils import limits
-from stairs.CodeProfiling import *
 import matplotlib.pyplot as plt
 from numpy.testing import assert_almost_equal
 

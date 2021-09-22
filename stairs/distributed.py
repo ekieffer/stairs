@@ -14,11 +14,17 @@ class Distributed_Simulation:
           current_directory = os.getcwd()
           self.dview.apply_sync(os.chdir,current_directory)
           self.dview.clear(block=True)
-          with self.dview.sync_imports():
+#          with self.dview.sync_imports():
+#              from stairs.libraries import Library
+#              from stairs.simulation import Simulation
+#              from stairs.heuristics import EvolvableHeuristic
+#              from deap import base, creator, gp
+          self.dview.execute("""
               from stairs.libraries import Library
               from stairs.simulation import Simulation
               from stairs.heuristics import EvolvableHeuristic
               from deap import base, creator, gp
+          """,block=True)
           self.dview.execute("""
           pset = EvolvableHeuristic.get_functions_set()
           simulation = Simulation("{0}","{1}",cashflow_frequency={2},niters={3},number_of_funds_per_recommitment={4},with_esg={5})

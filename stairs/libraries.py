@@ -311,7 +311,7 @@ class Library:
                     raise Exception("Feature: {0} is not a numeric value".format(indicator))
                 data.append(value)
             except KeyError as e:
-                print("Error the feature {0} is unknown".format(e), file=sys.stderr)
+                print("Error the feature {0} is unknown".format(e))
         return describe(data)
 
 
@@ -354,7 +354,7 @@ class Library:
             cdf = np.append(cdf,1.0)
             proba = np.diff(cdf)
             if (1.0 - np.sum(proba)) > 1e-2:
-                print("WARNING: ajust your std",file=sys.stderr)
+                print("WARNING: ajust your std")
             print("Sum {0}".format(np.sum(proba)))
             indexes = np.random.choice(len(adjusted_set),N,replace=False,p=proba/np.sum(proba))
             lib=Library()
