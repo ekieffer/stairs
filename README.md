@@ -8,7 +8,7 @@ This repository contains the source code of the STAIRS project (see [official pa
 
 We strongly recommend to create a virtual environment to avoid any interaction with your system python. Please note that only Python 3.6+ are supported.
 
-### Dependencies
+### Setup
 
 ```bash  
 $> sudo apt install build-essential git
@@ -25,7 +25,7 @@ $(stairs-env)> cd stairs; python setup.py build_ext --inplace; cd ..
 * Create ESG score with specific skewness and correlation
 
 ```bash
-python -m stairs.esg_score --plot --save ./data/lib_cashflows_esg.h5  --strategy proba -a 50 -c 0.9  ./data/lib_cashflows.h5
+python3 -m stairs.esg_score --plot --save ./data/lib_cashflows_esg.h5  --strategy proba -a 50 -c 0.9  ./data/lib_cashflows.h5
 ```
 
 ## Generate initial portfolios
@@ -33,8 +33,8 @@ python -m stairs.esg_score --plot --save ./data/lib_cashflows_esg.h5  --strategy
 * Create initial portfolios with overcommitment for training and validation
 
 ```bash
-python -m stairs.setup_portfolios -p 1000 -o 0 ./data/lib_cashflows_esg.h5 ./data/training_portfolios.h5
-python -m stairs.setup_portfolios -p 250  -o 0.3 ./data/lib_cashflows_esg.h5 ./data/validation_portfolios.h5
+python3 -m stairs.setup_portfolios -p 1000 -o 0 ./data/lib_cashflows_esg.h5 ./data/training_portfolios.h5
+python3 -m stairs.setup_portfolios -p 250  -o 0.3 ./data/lib_cashflows_esg.h5 ./data/validation_portfolios.h5
 ```
 
 ## Start Parallel training
@@ -44,7 +44,7 @@ python -m stairs.setup_portfolios -p 250  -o 0.3 ./data/lib_cashflows_esg.h5 ./d
 
 ```bash
 nohup ipcluster start -n 10 &
-python -m stairs.experiment.py configs/example.cfg
+python3 -m stairs.experiment.py configs/example.cfg
 ipcluster stop
 ```
 
@@ -53,7 +53,7 @@ ipcluster stop
 * Test the heuristics obtained from parallel training
 
 ```bash
-python -m stairs.validation configs/example.cfg
+python3 -m stairs.validation configs/example.cfg
 ```
 
 ## Generate statistics
@@ -61,6 +61,6 @@ python -m stairs.validation configs/example.cfg
 * Generate statistics and plots from portfolios obtained after validation
 
 ```bash
-python -m stairs.statistics /tmp/dir_portfolios/portfolios-heuristic0.h5 /tmp/dir_portfolios/portfolios-heuristic1.h5 /tmp/dir_portfolios/portfolios-heuristic2.h5
+python3 -m stairs.statistics /tmp/dir_portfolios/portfolios-heuristic0.h5 /tmp/dir_portfolios/portfolios-heuristic1.h5 /tmp/dir_portfolios/portfolios-heuristic2.h5
 ```
 
