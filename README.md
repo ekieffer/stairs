@@ -2,7 +2,7 @@
 
 ![Python Logo](https://www.python.org/static/community_logos/python-logo.png "Sample inline image")
 
-This repository contains the source code of the STAIRS project. The University of Luxembourg and the European Investment Bank (EIB) through the STAREBEI programme are working together to encourage private equity partners to invest in innovative and sustainable technologies. The funded research project “Sustainable and Trustworthy Artificial Intelligence Recommitment System (STAIRS) ” proposes an innovative approach to generate efficient recommitment strategies to guide institutional investors with the aid of AI-based algorithms.
+This repository contains the source code of the STAIRS project (see [official pages](https://pcog.uni.lu/stairs/)). The University of Luxembourg and the European Investment Bank (EIB) through the STAREBEI programme are working together to encourage private equity partners to invest in innovative and sustainable technologies. The funded research project “Sustainable and Trustworthy Artificial Intelligence Recommitment System (STAIRS) ” proposes an innovative approach to generate efficient recommitment strategies to guide institutional investors with the aid of AI-based algorithms.
 
 ## Installation
 
