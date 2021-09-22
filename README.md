@@ -50,7 +50,7 @@ ipcluster stop
 
 ## Start validation
 
-* Test the heuristics obtained from the parallel training
+* Test the heuristics obtained from parallel training
 
 ```bash
 python -m stairs.validation configs/example.cfg
